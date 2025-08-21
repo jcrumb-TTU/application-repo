@@ -1,4 +1,7 @@
 # GUI Application
+## General Info
+- Date:   2025.08.21
+- Author: Groups 5 and 6
 ## Problem Statement
 - Create any GUI within a 40 minute timeframe.
 ## Product
