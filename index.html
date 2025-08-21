@@ -64,7 +64,9 @@
         .increment { background-color: green; color: white; }
         .decrement { background-color: red; color: white; }
         .reset { background-color: blue; color: white; }
-        label { margin: 10px; font-size: 18px; }
+        .custom { background-color: orange; color: white; }
+        input[type="number"] { font-size: 14px; padding: 8px; margin: 5px; border-radius: 10px; border: 2px solid #ccc; width: 100px; text-align: center; }
+        label { margin: 10px; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -78,6 +80,11 @@
         <button class="decrement" onclick="decrement()">-1</button>
     </div>
     <button class="reset" onclick="reset()">Reset</button>
+    <div>
+        <input type="number" id="customValue" placeholder="Enter number">
+        <button class="custom" onclick="addCustom()">Add</button>
+        <button class="custom" onclick="subtractCustom()">Subtract</button>
+    </div>
     <label><input type="checkbox" id="disableNegatives" onchange="checkNegatives()"> Disable Negatives</label>
     
     <script>
@@ -102,6 +109,24 @@
             if (disableNegatives && count < 0) {
                 count = 0;
                 document.getElementById('counter').textContent = count;
+            }
+        }
+        function addCustom() {
+            const value = Number(document.getElementById('customValue').value);
+            if (!isNaN(value)) {
+                count += value;
+                document.getElementById('counter').textContent = count;
+            }
+        }
+        function subtractCustom() {
+            const value = Number(document.getElementById('customValue').value);
+            const disableNegatives = document.getElementById('disableNegatives').checked;
+            if (!isNaN(value)) {
+                const newCount = count - value;
+                if (!disableNegatives || newCount >= 0) {
+                    count = newCount;
+                    document.getElementById('counter').textContent = count;
+                }
             }
         }
     </script>
