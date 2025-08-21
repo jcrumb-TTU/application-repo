@@ -15,3 +15,5 @@
   - Allows the user to reset the count on the screen to 0.
 - **Disable Negatives Checkbox**
   - Disables the occurance of a negative count on the screen.
+ - **Add / Subtract Number**
+   - Allows the user to enter a number, then choose to *add* or *subtract* from the counter on the screen.
