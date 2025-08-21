@@ -67,6 +67,7 @@
         .custom { background-color: orange; color: white; }
         input[type="number"] { font-size: 14px; padding: 8px; margin: 5px; border-radius: 10px; border: 2px solid #ccc; width: 100px; text-align: center; }
         label { margin: 10px; font-size: 14px; }
+        .instructions { position: fixed; top: 20px; right: 20px; background: rgba(255,255,255,0.9); padding: 15px; border-radius: 10px; font-size: 12px; max-width: 200px; }
     </style>
 </head>
 <body>
@@ -74,6 +75,7 @@
         <img src="https://i.imgur.com/nYbVVvW.jpeg" alt="Counter">
         <img src="https://i.imgur.com/nYbVVvW.jpeg" alt="Counter">
     </div>
+    <h1>Counter</h1>
     <h1 id="counter">0</h1>
     <div>
         <button class="increment" onclick="increment()">+1</button>
@@ -87,6 +89,14 @@
         <button class="custom" onclick="subtractCustom()">Subtract</button>
     </div>
     <label><input type="checkbox" id="disableNegatives" onchange="checkNegatives()"> Disable Negatives</label>
+    
+    <div class="instructions">
+        <strong>Instructions:</strong><br>
+        • Click +1/-1 to increment/decrement<br>
+        • Enter custom numbers to add/subtract<br>
+        • Use Reset to return to zero<br>
+        • Check "Disable Negatives" to prevent negative numbers
+    </div>
     
     <script>
         let count = 0;
