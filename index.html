@@ -5,7 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counter</title>
     <style>
-        body { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        body { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0; 
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+            animation: slide 20s linear infinite;
+        }
+        
+        .background-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100vw;
+            height: 100vh;
+            background: url('https://i.imgur.com/nYbVVvW.jpeg') no-repeat;
+            background-size: cover;
+        }
+        
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200vw;
+            height: 100vh;
+            z-index: -1;
+            animation: slide 20s linear infinite;
+        }
+        
+        .background-container img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            float: left;
+        }
+        
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100vw); }
+        }
+        
         button { font-size: 24px; padding: 15px 30px; margin: 10px; border-radius: 25px; border: none; }
         .increment { background-color: green; color: white; }
         .decrement { background-color: red; color: white; }
@@ -14,6 +68,10 @@
     </style>
 </head>
 <body>
+    <div class="background-container">
+        <img src="https://i.imgur.com/nYbVVvW.jpeg" alt="Counter">
+        <img src="https://i.imgur.com/nYbVVvW.jpeg" alt="Counter">
+    </div>
     <h1 id="counter">0</h1>
     <div>
         <button class="increment" onclick="increment()">+1</button>
